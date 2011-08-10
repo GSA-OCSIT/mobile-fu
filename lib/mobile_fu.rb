@@ -100,7 +100,7 @@ module ActionController
       # request is either :mobile or not.
       
       def in_mobile_view?
-        request.format.to_sym == :mobile
+        request.format.present? and request.format.to_sym == :mobile
       end
       
       # Returns either true or false depending on whether or not the user agent of
